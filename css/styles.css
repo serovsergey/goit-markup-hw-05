@@ -478,6 +478,7 @@ footer {
 
 .examples .wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .examples .description {
@@ -487,24 +488,21 @@ footer {
   justify-content: center;
   padding: 24px;
   left: 0;
-  top: 0;
+  bottom: 0;
+  transform: translateY(100%);
   width: 100%;
   height: 100%;
   font-size: 18px;
   line-height: 1.5;
   color: var(--address-text-color);
   background-color: var(--primary-background-color);
-  opacity: 0;
-  transition: opacity var(--transition-style);
-}
-
-.examples .example {
-  transition: box-shadow var(--transition-style);
+  /* opacity: 0; */
+  transition: transform var(--transition-style);
 }
 
 .examples .example:hover .description,
 .examples .example:focus .description {
-  opacity: 0.9;
+  transform: translateY(0%);
 }
 
 .examples .link {
